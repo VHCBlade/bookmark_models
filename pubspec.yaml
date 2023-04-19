@@ -1,0 +1,17 @@
+name: bookmark_models
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies:
+
+  event_db: ^0.1.6
+
+  tuple: ^2.0.0
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0
