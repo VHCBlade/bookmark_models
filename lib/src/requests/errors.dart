@@ -5,4 +5,7 @@ enum BookmarkErrorStatusCodes {
   final String error;
 
   const BookmarkErrorStatusCodes(this.error);
+
+  static BookmarkErrorStatusCodes findByStatusCode(int code) =>
+      values.byName("error$code");
 }
