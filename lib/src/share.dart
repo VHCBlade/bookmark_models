@@ -1,3 +1,4 @@
+import 'package:bookmark_models/bookmark_models.dart';
 import 'package:event_db/event_db.dart';
 import 'package:tuple/tuple.dart';
 
@@ -28,6 +29,17 @@ class OutgoingBookmarkShareInfo extends GenericModel {
         "shouldBeDeleted": Tuple2(
             () => shouldBeDeleted, (val) => shouldBeDeleted = val ?? false),
       };
+
+  OutgoingBookmarkShareInfo();
+
+  factory OutgoingBookmarkShareInfo.fromCollection(
+      BookmarkCollectionModel model) {
+    final retVal = OutgoingBookmarkShareInfo();
+    retVal.idSuffix = model.id!;
+    retVal.lastUpdated = DateTime.now();
+
+    return retVal;
+  }
 
   @override
   String get type => "BookmarkShareModel";
