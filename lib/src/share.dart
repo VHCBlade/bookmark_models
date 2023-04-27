@@ -15,7 +15,7 @@ class IncomingBookmarkShareInfo extends GenericModel {
       };
 
   @override
-  String get type => "BookmarkShareModel";
+  String get type => "IncomingBookmarkShareInfo";
 }
 
 class OutgoingBookmarkShareInfo extends GenericModel {
