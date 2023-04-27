@@ -30,6 +30,6 @@ class BookmarkSyncData extends GenericModel {
         "lastUpdated": GenericModel.dateTime(
             () => lastUpdated, (value) => lastUpdated = value!),
         "collection": GenericModel.model(() => collectionModel,
-            (value) => collectionModel = value!, BookmarkCollectionModel.new),
+            (value) => collectionModel = value, BookmarkCollectionModel.new),
       };
 }
