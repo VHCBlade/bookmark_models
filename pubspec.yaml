@@ -1,7 +1,7 @@
 name: bookmark_models
-description: A starting point for Dart libraries or applications.
-version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+description: Models held for bookmark.vhcblade.com
+version: 0.1.0
+repository: https://github.com/VHCBlade/bookmark_models
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
