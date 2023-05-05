@@ -4,12 +4,15 @@ import 'package:tuple/tuple.dart';
 
 class IncomingBookmarkShareInfo extends GenericModel {
   DateTime? lastUpdated;
+  DateTime? lastChecked;
   List<String>? customOrder;
 
   @override
   Map<String, Tuple2<Getter, Setter>> getGetterSetterMap() => {
         "lastUpdated": GenericModel.dateTime(
             () => lastUpdated, (value) => lastUpdated = value),
+        "lastChecked": GenericModel.dateTime(
+            () => lastChecked, (value) => lastChecked = value),
         "customOrder": Tuple2(() => customOrder,
             (val) => customOrder = val?.map<String>((e) => "$e").toList()),
       };
