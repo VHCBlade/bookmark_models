@@ -2,9 +2,16 @@ import 'package:bookmark_models/bookmark_models.dart';
 import 'package:event_db/event_db.dart';
 import 'package:tuple/tuple.dart';
 
+enum LastCheckedStatus {
+  loading,
+  failed,
+  succeeded,
+}
+
 class IncomingBookmarkShareInfo extends GenericModel {
   DateTime? lastUpdated;
   DateTime? lastChecked;
+  LastCheckedStatus? lastCheckedStatus;
   List<String>? customOrder;
 
   @override
@@ -13,6 +20,11 @@ class IncomingBookmarkShareInfo extends GenericModel {
             () => lastUpdated, (value) => lastUpdated = value),
         "lastChecked": GenericModel.dateTime(
             () => lastChecked, (value) => lastChecked = value),
+        "lastCheckedStatus": GenericModel.convertEnumToString(
+          () => lastCheckedStatus,
+          (value) => lastCheckedStatus = value,
+          LastCheckedStatus.values,
+        ),
         "customOrder": Tuple2(() => customOrder,
             (val) => customOrder = val?.map<String>((e) => "$e").toList()),
       };
